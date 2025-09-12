@@ -81,7 +81,9 @@ vagrant halt
 
 ## Base de Conocimiento de Errores que les puedan surgir.
 - [Creacion VM (vagrant up)](extras/knowledge_DB/vagratn_up.md)
+- [Creacion VM - Internal Network Not_Found (vagrant up)](extras/knowledge_DB/vagratn_up.md)
 - [Conectar contra la vm (vagrant ssh o ssh vagrant@ip)](extras/knowledge_DB/Conexion.md)
+
 
 > La idea es que tengan al alcance posibles errores que les pueda surgir y como solucionarlos.
 > En caso de que su Problema no se solucione por alguno de estos metodos.
