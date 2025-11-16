@@ -1,0 +1,34 @@
+    1  sudo fdisk /dev/sdd
+    2  sudo mkswap /dev/sdd1
+    3  sudo swapon /dev/sdd1
+    4  free -h
+    5  sudo fdisk /dev/sdv
+    6  n
+    7  sudo fdisk /dev/sdc
+    8  sudo pvcreate /dev/sdd2 /dev/sdd3 /dev/sdd5 /dev/sdd6 /dev/sdc1 /dev/sdc2
+    9  sudo pvs
+   10  sudo vgcreate vg_datos /dev/sdc1 /dev/sdd2
+   11  sudo vgcreate vg_web /dev/sdc2
+   12  sudo vgs
+   13  sudo lvcreate -L 1G vg_web -n lv_web1
+   14  sudo lvcreate -L 512M vg_web -n lv_web2
+   15  sudo lvcreate -L 512M vg_web -n lv_web3
+   16  sudo lvcreate -L 1.5G vg_datos -n lv_datos1
+   17  sudo lvs
+   18  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web1
+   19  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web2
+   20  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web3
+   21  sudo mkfs.ext4 /dev/mapper/vg_datos-lv_datos1
+   22  sudo mkdir /mnt/web1
+   23  sudo mkdir /mnt/web2
+   24  sudo mkdir /mnt/web3
+   25  sudo mkdir /mnt/datos1
+   26  sudo mount /dev/mapper/vg_web-lv_web1 /mnt/web1
+   27  sudo mount /dev/mapper/vg_web-lv_web2 /mnt/web2
+   28  sudo mount /dev/mapper/vg_web-lv_web3 /mnt/web3
+   29  sudo mount /dev/mapper/vg_datos-lv_datos1 /mnt/datos1
+   30  df -h
+   31  sudo pvs > pvs.txt
+   32  sudo vgs > vgs.txt
+   33  sudo lvs > lvs.txt
+   34  history > historial_lvm.txt
